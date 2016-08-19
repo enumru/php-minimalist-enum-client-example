@@ -6,7 +6,7 @@ require('EnumHelper.php');
 
 $client_id = Put here your client_id '';
 $client_secret = Put here your client_secret '';
-$redirect_uri = Put here your redirect_uri '';
+$redirect_uri = Put here your redirect_uri (https) '';
 
 $enum = new EnumHelper($client_id, $client_secret, $redirect_uri);
 
