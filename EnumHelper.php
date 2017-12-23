@@ -14,8 +14,8 @@ class EnumHelper
 	public function __construct($client_id, $client_secret, $redirect_uri)
 	{
 		if (empty($client_id)) throw new Exception("client_id is required");
-		if (empty($client_id)) throw new Exception("client_secret is required");
-		if (empty($client_id)) throw new Exception("redirect_uri is required");
+		if (empty($client_secret)) throw new Exception("client_secret is required");
+		if (empty($redirect_uri)) throw new Exception("redirect_uri is required");
 
 		$this->client_id = $client_id;
 		$this->client_secret = $client_secret;
@@ -32,7 +32,6 @@ class EnumHelper
 			'state' => $state,
 		);
 		$params = http_build_query($params, null, '&', PHP_QUERY_RFC3986);
-		//die($params);
 
 		$url = self::AUTH_URL . '?' . $params;
 		header('Location: ' . $url);
@@ -48,7 +47,6 @@ class EnumHelper
 			'redirect_uri' => $this->redirect_uri,
 		);
 		$params = http_build_query($params);
-		//die($params);
 
 		$curl = curl_init();
 		if ($curl === FALSE) throw new Exception('curl_init error');
