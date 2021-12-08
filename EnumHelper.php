@@ -2,7 +2,7 @@
 
 class EnumHelper
 {
-	const BASE_URL = 'https://auth.enum.ru';
+	const BASE_URL = 'https://auth.e-num.com';
 	const AUTH_URL = self::BASE_URL . '/OAuth/Authorize';
 	const TOKEN_URL = self::BASE_URL . '/OAuth/Token';
 	const INFO_URL = self::BASE_URL . '/Api/Me';
